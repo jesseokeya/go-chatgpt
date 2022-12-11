@@ -1,4 +1,4 @@
-module github.com/abhayptp/go-chatgpt
+module github.com/jesseokeya/go-chatgpt
 
 go 1.19
 

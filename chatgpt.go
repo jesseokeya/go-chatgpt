@@ -4,21 +4,21 @@ import (
 	"github.com/google/uuid"
 )
 
-type chatGpt struct {
+type ChatGpt struct {
 	client *client
 
 	conversationId string
 	lastMessageId  string
 }
 
-func NewChatGpt(c *client) *chatGpt {
-	return &chatGpt{
+func NewChatGpt(c *client) *ChatGpt {
+	return &ChatGpt{
 		client:        c,
 		lastMessageId: uuid.Must(uuid.NewRandom()).String(),
 	}
 }
 
-func (c *chatGpt) SendMessage(m string) (string, error) {
+func (c *ChatGpt) SendMessage(m string) (string, error) {
 	req := newRequest("next",
 		[]requestMessage{
 			{
