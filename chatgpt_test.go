@@ -2,6 +2,7 @@ package chatgpt
 
 import (
 	"fmt"
+	"os"
 	"testing"
 )
 
@@ -9,8 +10,8 @@ import (
 func TestSendMessage(t *testing.T) {
 	// Prepare test data
 	chatgpt := NewChatGpt(NewClient(&Credentials{
-		BearerToken:  "Bearer <Bearer-Token>",
-		SessionToken: "<Session-Token>",
+		BearerToken:  os.Getenv("BEARER_TOKEN"),
+		SessionToken: os.Getenv("SESSION_TOKEN"),
 	}))
 	mockRequest := "hello"
 
