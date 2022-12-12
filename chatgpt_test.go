@@ -2,15 +2,18 @@ package chatgpt
 
 import (
 	"fmt"
+	"os"
 	"testing"
 )
 
 // TestSendMessage tests the send method of the client
 func TestSendMessage(t *testing.T) {
 	// Prepare test data
+	fmt.Println(os.Getenv("BEARER_TOKEN"))
+	fmt.Println(os.Getenv("SESSION_TOKEN"))
 	chatgpt := NewChatGpt(NewClient(&Credentials{
-		BearerToken:  "Bearer <Bearer-Token>",
-		SessionToken: "<Session-Token>",
+		BearerToken:  os.Getenv("BEARER_TOKEN"),
+		SessionToken: os.Getenv("SESSION_TOKEN"),
 	}))
 	mockRequest := "hello"
 
