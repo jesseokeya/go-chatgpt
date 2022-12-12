@@ -22,3 +22,5 @@ jobs:
         run: go test ./...
         env:
           CI: true
+          BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
+          SESSION_TOKEN: ${{ secrets.SESSION_TOKEN }}
