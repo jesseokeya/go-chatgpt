@@ -1,4 +1,4 @@
-name: ChatGT3 CI
+name: ChatGT3 CI Tests
 
 on: [push, pull_request]
 
